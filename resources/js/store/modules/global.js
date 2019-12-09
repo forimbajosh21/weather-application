@@ -1,6 +1,8 @@
 const state = {
-    isLoading: false,
-    selectedData: {}
+    isLoading: true,
+    selectedData: [],
+    city: {},
+    listOfData: []
 };
 
 const getters = {};
@@ -12,6 +14,14 @@ const actions = {
 
     changeSelectedDate({ commit }, data) {
         commit("setSelectedData", data);
+    },
+
+    changeListOfData({ commit }, data) {
+        commit("setListOfData", data);
+    },
+
+    changeCity({ commit }, data) {
+        commit("setCity", data);
     }
 };
 
@@ -22,6 +32,14 @@ const mutations = {
 
     setSelectedData(state, data) {
         state.selectedData = data;
+    },
+
+    setListOfData(state, data) {
+        state.listOfData = data;
+    },
+
+    setCity(state, data) {
+        state.city = data;
     }
 };
 
