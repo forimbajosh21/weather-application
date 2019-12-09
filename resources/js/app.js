@@ -13,6 +13,7 @@ import vuetify from "./plugins/vuetify";
 
 import Routes from "./routes";
 import App from "./views/App";
+import store from "./store";
 
 /**
  * The following block of code may be used to automatically register your
@@ -33,6 +34,7 @@ import App from "./views/App";
 
 const app = new Vue({
     vuetify,
+    store,
     el: "#app",
     components: { App },
     router: Routes
