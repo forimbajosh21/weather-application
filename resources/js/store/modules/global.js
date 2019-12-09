@@ -16,11 +16,11 @@ const actions = {
 };
 
 const mutations = {
-    setIsLoading(state, { status }) {
+    setIsLoading(state, status) {
         state.isLoading = status;
     },
 
-    setSelectedData(state, { data }) {
+    setSelectedData(state, data) {
         state.selectedData = data;
     }
 };
