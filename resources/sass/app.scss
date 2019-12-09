@@ -18,10 +18,18 @@ body {
 
 .border-temperature-right {
     border-right: 1px solid #fff;
+
+    &.loading {
+        border-right: 1px solid #e3e3e3;
+    }
 }
 
 .border-temperature-left {
     border-left: 1px solid #fff;
+
+    &.loading {
+        border-left: 1px solid #e3e3e3;
+    }
 }
 
 .v-calendar-weekly__head {
