@@ -1,7 +1,7 @@
   
 <template>
-  <v-sheet height="535" elevation="5">
-    <v-calendar dark show-month-on-first type="month">
+  <v-sheet height="200" elevation="5">
+    <v-calendar dark show-month-on-first type="custom-weekly" :start="start">
       <template v-slot:day-label="{ present, past, date }">
         <div class="day-label-container">{{date | moment("D")}}</div>
       </template>
@@ -49,6 +49,12 @@ export default {
     })
   },
   computed: {
+    start: function() {
+      const { $moment, $store } = this;
+      const { selectedData } = $store.state.global;
+
+      return $moment(selectedData.dt_dtx).format("YYYY-MM-DD");
+    },
     events: function() {
       const { $moment, $store } = this;
       const { listOfData } = $store.state.global;
@@ -96,7 +102,7 @@ export default {
       setTimeout(() => {
         $store.dispatch("global/changeIsLoading", false);
         $store.dispatch("global/changeSelectedDate", container[date]);
-      }, 1500);
+      }, 300);
     }
   }
 };
